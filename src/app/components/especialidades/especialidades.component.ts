@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EspecialidadService } from 'src/app/services/especialidad.service';
 
 @Component({
   selector: 'app-especialidades',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./especialidades.component.css']
 })
 export class EspecialidadesComponent implements OnInit {
-
-  constructor() { }
+  especialidades : Especialidad[];
+  
+  constructor(private especialidadService:EspecialidadService) {
+  }
 
   ngOnInit() {
+    this.especialidades = this.especialidadService.getEspecialidades();
+    console.log(this.especialidades);
   }
 
 }
