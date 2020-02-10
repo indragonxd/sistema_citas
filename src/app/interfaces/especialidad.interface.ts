@@ -1,5 +1,5 @@
 interface Especialidad {
-  _id:string;
+  idEspecialidad:string;
   nombre:string;
   numConsultorio:number;
   descripcion:string;

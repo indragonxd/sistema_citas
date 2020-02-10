@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecialidadService } from 'src/app/services/especialidad.service';
 import { MedicoService } from 'src/app/services/medico.service';
+import { HorarioService } from 'src/app/services/horario.service';
 
 @Component({
   selector: 'app-recerva-citas',
@@ -11,11 +12,11 @@ export class RecervaCitasComponent implements OnInit {
   especialidades: Especialidad[];
   medicos: Medico[];
   especialidadSelect:string;
-  medicosFiltrados: string[];
+  medicosFiltrados: Medico[];
   medicoSelect: string[];
-  horario:Horario[];
+  horarios:Horario[];
   citaGenerada:Cita;
-  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService) { 
+  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private horarioService:HorarioService) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
     this.especialidadService.getEspecialidades().
@@ -31,17 +32,19 @@ export class RecervaCitasComponent implements OnInit {
   ngOnInit() {
   }
   actualizarSelect($event){
-    console.log($event.target.value);
     this.especialidadSelect = $event.target.value;
-    //this.medicosFiltrados = this.getMedicosFiltrados(this.especialidadSelect);
-    console.log(this.especialidadSelect.substr(0,1));
+    this.medicosFiltrados = this.getMedicosFiltrados(this.especialidadSelect);
   }
   getMedicosFiltrados(especialidadSelect){
-    //return this.medicos.filter(med => med.substr(0,1) == this.especialidadSelect.substr(0,1));
+    return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect);
   }
   llenarTabla($event){
     //ponemos los horarios de un doctor
     this.medicoSelect = $event.target.value;
-    
+    //cargamos los horarios del doctor
+    this.horarioService.getHorariosByIdMedico(this.medicoSelect).
+    subscribe(data=>{
+      this.horarios=data;
+    });
   }
 }

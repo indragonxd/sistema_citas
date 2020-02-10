@@ -3,15 +3,15 @@
     
     <form class="col-3">
         <div class="form-group col">
-          <label for="inputEmail4">Especialidad</label>
+          <label >Especialidad</label>
           <select (ngModel)="especialidadSelect" class="custom-select" (change)="actualizarSelect($event)" >
-            <option *ngFor='let especialidad of especialidades' [value]="especialidad">{{especialidad}}</option>
+            <option *ngFor='let especialidad of especialidades' [value]="especialidad.idEspecialidad">{{especialidad.nombre}}</option>
           </select>
         </div>
         <div class="form-group col">
           <label for="inputEmail24">Medico</label>
           <select class="custom-select" (change)="llenarTabla($event)">
-            <option *ngFor='let medico of medicosFiltrados' [value]='medico'>{{medico}}</option>
+            <option *ngFor='let medico of medicosFiltrados' [value]='medico.idMedico'>{{medico}}</option>
           </select>
         </div>
         <div class="form-group col">
