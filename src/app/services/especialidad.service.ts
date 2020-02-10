@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EspecialidadService {
   especialidades:Especialidad []
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.especialidades = [
       {
         _id:'23',
@@ -47,6 +48,7 @@ export class EspecialidadService {
   }
   getEspecialidades(){
     //mediante un llmado httpcliente
+    //return await this.http.get('AQUI PON LA RUTA QUE PONES EN POSTMAN');
     return this.especialidades;
   }
 }
