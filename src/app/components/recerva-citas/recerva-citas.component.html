@@ -4,18 +4,14 @@
     <form class="col-3">
         <div class="form-group col">
           <label for="inputEmail4">Especialidad</label>
-          <select class="custom-select">
-            <option value="1">Traumatologia</option>
-            <option value="2">Cardiologia</option>
-            <option value="3">Oftalmologia</option>
+          <select (ngModel)="especialidadSelect" class="custom-select" (change)="actualizarSelect($event)" >
+            <option *ngFor='let especialidad of especialidades' [value]="especialidad">{{especialidad}}</option>
           </select>
         </div>
         <div class="form-group col">
           <label for="inputEmail24">Medico</label>
-          <select class="custom-select">
-            <option value="1">Fabricio Padroa Castro</option>
-            <option value="2">Nataly Vazquez Gutierrez</option>
-            <option value="3">Adriana Gama Saenz</option>
+          <select class="custom-select" (change)="llenarTabla($event)">
+            <option *ngFor='let medico of medicosFiltrados' [value]='medico'>{{medico}}</option>
           </select>
         </div>
         <div class="form-group col">
@@ -29,7 +25,6 @@
       <table class="offset-1 table table-hover mt-4">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Dia</th>
             <th scope="col">Hora Inicio</th>
             <th scope="col">Hora Fin</th>
@@ -38,35 +33,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+          <tr *ngFor='horario cita of horarios'>
+            <td>{{horario.dia}}</td>
+            <td>{{horario.horaInicio}}</td>
+            <td>{{horario.horaFin}}</td>
             <td>4</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>2</td>
-            <td>2</td>
+            <td>1</td>
           </tr>
         </tbody>
       </table>
