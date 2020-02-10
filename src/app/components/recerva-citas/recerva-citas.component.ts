@@ -44,9 +44,9 @@ export class RecervaCitasComponent implements OnInit {
     //ponemos los horarios de un doctor
     this.medicoSelect = $event.target.value;
     //cargamos los horarios del doctor
-    this.horarioService.getHorariosByIdMedico(this.medicoSelect.idMedico).
+    this.medicoService.getMedicoById(this.medicoSelect.idMedico).
     subscribe(data=>{
-      this.horarios=data;
+      this.horarios=data.horario_id;
     });
   }
   generarCita(){

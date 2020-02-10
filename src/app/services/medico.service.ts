@@ -11,4 +11,7 @@ export class MedicoService {
   getMedicos(){
     return this.http.get<Medico[]>('aqui ponga');
   }
+  getMedicoById(idMedico){
+    return this.http.get<Medico>('aqui ponga + medico');
+  }
 }
