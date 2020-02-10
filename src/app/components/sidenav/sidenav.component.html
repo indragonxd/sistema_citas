@@ -1,0 +1,27 @@
+
+<mat-sidenav-container fullscreen >
+  <mat-sidenav mode="side" #sidenav opened position="start">
+    <mat-nav-list>
+      <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg/1200px-UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg.png" alt="Photo of a Shiba Inu" class="imgRedonda" >
+      <a mat-list-item [routerLink]="'/perfil'"> Perfil </a>
+      <a mat-list-item [routerLink]="'/recerva-cita'"> Recervar Cita </a>
+      <a mat-list-item [routerLink]="'/historial-citas'"> Historial de Citas </a>
+      <a mat-list-item [routerLink]="'/especialidades'"> Especialidades </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      Sistema de Recerva de Citas
+      <span class="toolbar-spacer"></span>
+      Sherwin Marquez
+    </mat-toolbar>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
