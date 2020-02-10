@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CitaService } from 'src/app/services/cita.service';
 
 @Component({
   selector: 'app-historial-citas',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historial-citas.component.css']
 })
 export class HistorialCitasComponent implements OnInit {
-
-  constructor() { }
+  citas: Cita[];
+  constructor(private citaService:CitaService) { }
 
   ngOnInit() {
+    this.citaService.getCitas("73524246").
+    subscribe(data=>{
+      this.citas=data;
+    })
   }
 
 }

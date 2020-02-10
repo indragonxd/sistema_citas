@@ -2,44 +2,23 @@
 <table class="offset-1 table table-hover mt-4">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Medico</th>
+      <th scope="col">Especialidad</th>
+      <th scope="col">Fecha</th>
       <th scope="col">Dia</th>
-      <th scope="col">Hora Inicio</th>
-      <th scope="col">Hora Fin</th>
-      <th scope="col">Consultorio</th>
-      <th scope="col">Piso</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>4</td>
+    <tr *ngFor='let cita of citas'>
+      <th scope="row">{{cita.idCita}}</th>
+      <td>{{cita.estado}}</td>
+      <td>{{cita.medico_id.nombres}} {{cita.medico_id.apellidoPaterno}}</td>
+      <td>{{cita.medico_id.especialidad_id.nombre}}</td>
+      <td>{{cita.fecha}}</td>
+      <td>{{cita.medico_id.horario_id.dia}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
+   
   </tbody>
 </table>

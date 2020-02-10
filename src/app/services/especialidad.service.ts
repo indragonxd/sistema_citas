@@ -49,7 +49,6 @@ export class EspecialidadService {
   }
   getEspecialidades(){
     //mediante un llmado httpcliente
-    //return await this.http.get('AQUI PON LA RUTA QUE PONES EN POSTMAN');
     return this.http.get<Especialidad[]>('http://localhost:8080/clinica/especialidades');
     //return this.especialidades;
   }
