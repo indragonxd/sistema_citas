@@ -33,8 +33,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='horario cita of horarios'>
-            <td>{{horario.dia}}</td>
+          <tr *ngFor='let horario of horarios'>
+            <th scope="row">{{horario.dia}}</th>
             <td>{{horario.horaInicio}}</td>
             <td>{{horario.horaFin}}</td>
             <td>4</td>
