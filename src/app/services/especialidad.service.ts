@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class EspecialidadService {
   especialidades:Especialidad []
   constructor(private http: HttpClient) { 
-    this.especialidades = [
+    /*this.especialidades = [
       {
         _id:'23',
         nombre:'Traumatologia',
@@ -44,11 +45,12 @@ export class EspecialidadService {
         numConsultorio:3,
         descripcion:'Es la rama de la medicina que se dedica al estudio de las lesiones del aparato locomotor. La especialidad es médico-quirúrgica, y los médicos que la practican se llaman traumatólogos o cirujanos ortopédicos. Su ámbito se extiende más allá del campo de las lesiones traumáticas; abarca el estudio de las enfermedades congénitas o adquiridas que afectan al aparato locomotor, especialmente de aquellas que precisan tratamiento con cirugía, prótesis u ortesis'
       },
-    ];
+    ];*/
   }
   getEspecialidades(){
     //mediante un llmado httpcliente
     //return await this.http.get('AQUI PON LA RUTA QUE PONES EN POSTMAN');
-    return this.especialidades;
+    return this.http.get<Especialidad[]>('http://localhost:8080/clinica/especialidades');
+    //return this.especialidades;
   }
 }

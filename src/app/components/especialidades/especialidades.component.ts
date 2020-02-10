@@ -13,7 +13,10 @@ export class EspecialidadesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.especialidades = this.especialidadService.getEspecialidades();
+    this.especialidadService.getEspecialidades().
+    subscribe(data=>{
+      this.especialidades=data;
+    })
     console.log(this.especialidades);
   }
 
