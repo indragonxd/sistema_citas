@@ -17,7 +17,7 @@ export class EspecialidadesComponent implements OnInit {
     subscribe(data=>{
       this.especialidades=data;
     })
-    console.log(this.especialidades);
+    //console.log(this.especialidades);
   }
 
 }

@@ -35,7 +35,9 @@ export class RecervaCitasComponent implements OnInit {
   }
   actualizarSelect($event){
     this.especialidadSelect = $event.target.value;
+    console.log(this.especialidadSelect);
     this.medicosFiltrados = this.getMedicosFiltrados();
+    console.log(this.especialidadSelect.idEspecialidad);
   }
   getMedicosFiltrados(){
     return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect.idEspecialidad);
