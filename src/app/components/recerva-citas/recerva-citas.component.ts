@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EspecialidadService } from 'src/app/services/especialidad.service';
 import { MedicoService } from 'src/app/services/medico.service';
 import { HorarioService } from 'src/app/services/horario.service';
+import { CitaService } from 'src/app/services/cita.service';
 
 @Component({
   selector: 'app-recerva-citas',
@@ -11,12 +12,13 @@ import { HorarioService } from 'src/app/services/horario.service';
 export class RecervaCitasComponent implements OnInit {
   especialidades: Especialidad[];
   medicos: Medico[];
-  especialidadSelect:string;
+  especialidadSelect:Especialidad;
   medicosFiltrados: Medico[];
-  medicoSelect: string[];
+  medicoSelect: Medico;
   horarios:Horario[];
   citaGenerada:Cita;
-  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private horarioService:HorarioService) { 
+  fechaCita:Date;
+  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private horarioService:HorarioService, private citaService:CitaService) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
     this.especialidadService.getEspecialidades().
@@ -33,18 +35,32 @@ export class RecervaCitasComponent implements OnInit {
   }
   actualizarSelect($event){
     this.especialidadSelect = $event.target.value;
-    this.medicosFiltrados = this.getMedicosFiltrados(this.especialidadSelect);
+    this.medicosFiltrados = this.getMedicosFiltrados();
   }
-  getMedicosFiltrados(especialidadSelect){
-    return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect);
+  getMedicosFiltrados(){
+    return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect.idEspecialidad);
   }
   llenarTabla($event){
     //ponemos los horarios de un doctor
     this.medicoSelect = $event.target.value;
     //cargamos los horarios del doctor
-    this.horarioService.getHorariosByIdMedico(this.medicoSelect).
+    this.horarioService.getHorariosByIdMedico(this.medicoSelect.idMedico).
     subscribe(data=>{
       this.horarios=data;
     });
+  }
+  generarCita(){
+    //ya tenemos el idPaciente
+    //tenemos codigo del doctor
+    //fecha
+    let paciente:Paciente
+
+    let cita:Cita;
+    console.log(this.medicoSelect);
+    console.log(this.fechaCita);
+    cita.fecha=this.fechaCita;
+    //cita.paciente_id
+    cita.medico_id = this.medicoSelect;
+    this.citaService.crearCita(cita);
   }
 }

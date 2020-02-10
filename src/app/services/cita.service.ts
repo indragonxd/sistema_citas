@@ -15,4 +15,8 @@ export class CitaService {
     return this.http.get<Cita[]>('http://localhost:8080/clinica/cita');
     
   }
+  crearCita(cita:Cita){
+    //cambia la ruta
+    return this.http.post('pon la ruta',cita);
+  }
 }
