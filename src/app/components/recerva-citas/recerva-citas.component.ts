@@ -4,6 +4,7 @@ import { MedicoService } from 'src/app/services/medico.service';
 import { CitaService } from 'src/app/services/cita.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 import { Router } from '@angular/router';
+import { HorarioService } from 'src/app/services/horario.service';
 
 @Component({
   selector: 'app-recerva-citas',
@@ -19,7 +20,7 @@ export class RecervaCitasComponent implements OnInit {
   horarios:Horario[];
   citaGenerada:Cita;
   fechaCita:Date;
-  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private router: Router) { 
+  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private horarioService:HorarioService,private router: Router) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
     this.especialidadService.getEspecialidades().
@@ -46,10 +47,10 @@ export class RecervaCitasComponent implements OnInit {
     this.medicoSelect = $event.target.value;
     console.log(this.medicoSelect);
     //cargamos los horarios del doctor
-    this.medicoService.getMedicoById(this.medicoSelect).
-    subscribe(data=>{
-      this.horarios=data.horario_id;
-    });
+    this.horarioService.getHorariosByIdMedico(this.medicoSelect).subscribe(data => {
+      this.horarios = data;
+    })
+
   }
   generarCita(){
     //ya tenemos el idPaciente

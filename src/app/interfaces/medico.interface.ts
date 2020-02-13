@@ -4,5 +4,4 @@ interface Medico {
   apellidoPaterno:string;
   apellidoMaterno:string;
   especialidad_id:Especialidad;
-  horario_id:Horario[];
 }
