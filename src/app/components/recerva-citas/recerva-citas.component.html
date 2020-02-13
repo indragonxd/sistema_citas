@@ -5,20 +5,20 @@
         <div class="form-group col">
           <label >Especialidad</label>
           <select (ngModel)="especialidadSelect" class="custom-select" (change)="actualizarSelect($event)" >
-            <option *ngFor='let especialidad of especialidades' [value]="especialidad">{{especialidad.nombre}}</option>
+            <option *ngFor='let especialidad of especialidades' [value]="especialidad.idEspecialidad">{{especialidad.nombre}}</option>
           </select>
         </div>
         <div class="form-group col">
           <label for="inputEmail24">Medico</label>
           <select class="custom-select" (change)="llenarTabla($event)">
-            <option *ngFor='let medico of medicosFiltrados' [value]='medico'>{{medico}}</option>
+            <option *ngFor='let medico of medicosFiltrados' [value]='medico.idMedico'>{{medico.nombres}}</option>
           </select>
         </div>
         <div class="form-group col">
           <label for="inputEmail24">Fecha Cita</label>
           <input type="date" class="form-control" id="inputEmail24" (ngModel) = "fechaCita">
         </div>
-        <button type="submit" class="btn btn-primary ml-3 mt-3" onclick="generarCita">Recervar Cita</button>
+        <button type="submit" class="btn btn-primary ml-3 mt-3" onclick="generarCita">Reservar Cita</button>
         
     </form>
     <div class="col-8">

@@ -12,11 +12,11 @@ export class CitaService {
   getCitas(dni:string){
     //mediante un llmado httpcliente
     //ahora tienes que filtrar la cita por id de paciente
-    return this.http.get<Cita[]>('http://localhost:8080/clinica/cita');
+    return this.http.get<Cita[]>('http://localhost:8080/clinica/citas/paciente/'+dni);
     
   }
   crearCita(cita:Cita){
     //cambia la ruta
-    return this.http.post('pon la ruta',cita);
+    return this.http.post('http://localhost:8080/clinica/citas/',cita);
   }
 }

@@ -9,9 +9,9 @@ export class MedicoService {
   constructor(private http: HttpClient) { }
 
   getMedicos(){
-    return this.http.get<Medico[]>('aqui ponga');
+    return this.http.get<Medico[]>('http://localhost:8080/clinica/medicos/');
   }
   getMedicoById(idMedico){
-    return this.http.get<Medico>('aqui ponga + medico');
+    return this.http.get<Medico>('http://localhost:8080/clinica/medicos/' + idMedico);
   }
 }

@@ -12,9 +12,9 @@ import { CitaService } from 'src/app/services/cita.service';
 export class RecervaCitasComponent implements OnInit {
   especialidades: Especialidad[];
   medicos: Medico[];
-  especialidadSelect:Especialidad;
+  especialidadSelect:string;
   medicosFiltrados: Medico[];
-  medicoSelect: Medico;
+  medicoSelect: string;
   horarios:Horario[];
   citaGenerada:Cita;
   fechaCita:Date;
@@ -38,14 +38,14 @@ export class RecervaCitasComponent implements OnInit {
     this.medicosFiltrados = this.getMedicosFiltrados();
   }
   getMedicosFiltrados(){
-    console.log(this.especialidadSelect.idEspecialidad);
-    return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect.idEspecialidad);
+    return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect);
   }
   llenarTabla($event){
     //ponemos los horarios de un doctor
     this.medicoSelect = $event.target.value;
+    console.log(this.medicoSelect);
     //cargamos los horarios del doctor
-    this.medicoService.getMedicoById(this.medicoSelect.idMedico).
+    this.medicoService.getMedicoById(this.medicoSelect).
     subscribe(data=>{
       this.horarios=data.horario_id;
     });
@@ -61,7 +61,7 @@ export class RecervaCitasComponent implements OnInit {
     console.log(this.fechaCita);
     cita.fecha=this.fechaCita;
     //cita.paciente_id
-    cita.medico_id = this.medicoSelect;
+    //cita.medico_id = this.medicoSelect;
     this.citaService.crearCita(cita);
   }
 }

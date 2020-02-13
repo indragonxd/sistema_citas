@@ -3,11 +3,14 @@
   <mat-sidenav mode="side" #sidenav opened position="start">
     <mat-nav-list>
       <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg/1200px-UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg.png" alt="Photo of a Shiba Inu" class="imgRedonda" >
-      <a mat-list-item [routerLink]="'/perfil'"> <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-        Perfil </a>
-      <a mat-list-item [routerLink]="'/recerva-cita'"> Recervar Cita </a>
-      <a mat-list-item [routerLink]="'/historial-citas'"> Historial de Citas </a>
-      <a mat-list-item [routerLink]="'/especialidades'"> Especialidades </a>
+      <a mat-list-item [routerLink]="'/perfil'">
+        <i class="fas fa-clinic-medical" style="font-size: 25px; color: white; padding-right: 15px;" ></i>Perfil </a>
+      <a mat-list-item [routerLink]="'/recerva-cita'"> 
+        <i class="fas fa-notes-medical" style="font-size: 25px; color: white; padding-right: 15px"></i>Reservar Cita </a>
+      <a mat-list-item [routerLink]="'/historial-citas'">
+        <i class="fas fa-book-medical" style="font-size: 25px; color: white; padding-right: 15px"></i>Historial de Citas </a>
+      <a mat-list-item [routerLink]="'/especialidades'"> 
+        <i class="fas fa-briefcase-medical" style="font-size: 25px; color: white; padding-right: 15px"></i>Especialidades </a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -16,9 +19,10 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      Sistema de Recerva de Citas
+      Sistema de Reserva de Citas
       <span class="toolbar-spacer"></span>
-      Sherwin Marquez
+        Brian Orellana
+      <i class="fas fa-user" style="font-size: 40px; color: white; padding: 0px 30px 0px 50px;"></i>
     </mat-toolbar>
     <div class="main-content">
       <router-outlet></router-outlet>
