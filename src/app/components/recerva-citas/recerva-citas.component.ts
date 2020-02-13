@@ -38,6 +38,7 @@ export class RecervaCitasComponent implements OnInit {
     this.medicosFiltrados = this.getMedicosFiltrados();
   }
   getMedicosFiltrados(){
+    console.log(this.especialidadSelect.idEspecialidad);
     return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect.idEspecialidad);
   }
   llenarTabla($event){
