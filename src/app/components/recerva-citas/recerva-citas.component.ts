@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecialidadService } from 'src/app/services/especialidad.service';
 import { MedicoService } from 'src/app/services/medico.service';
-import { HorarioService } from 'src/app/services/horario.service';
 import { CitaService } from 'src/app/services/cita.service';
+import { PacienteService } from 'src/app/services/paciente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recerva-citas',
@@ -18,7 +19,7 @@ export class RecervaCitasComponent implements OnInit {
   horarios:Horario[];
   citaGenerada:Cita;
   fechaCita:Date;
-  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private horarioService:HorarioService, private citaService:CitaService) { 
+  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private router: Router) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
     this.especialidadService.getEspecialidades().
@@ -54,14 +55,19 @@ export class RecervaCitasComponent implements OnInit {
     //ya tenemos el idPaciente
     //tenemos codigo del doctor
     //fecha
-    let paciente:Paciente
-
     let cita:Cita;
-    console.log(this.medicoSelect);
-    console.log(this.fechaCita);
-    cita.fecha=this.fechaCita;
-    //cita.paciente_id
-    //cita.medico_id = this.medicoSelect;
-    this.citaService.crearCita(cita);
+    this.medicoService.getMedicoById(this.medicoSelect).subscribe(data => {
+      cita.medico_id = data;
+    });
+    this.pacienteService.getPacienteById("tu dni pavaso").subscribe(data => {
+      cita.paciente_id = data;
+    });
+    cita.fecha = this.fechaCita;
+    this.citaService.crearCita(cita).subscribe(data => {
+      if(data != null){
+        //dialog = true;
+        this.router.navigate(['/historial-citas']);
+      }
+    });
   }
 }
