@@ -18,8 +18,9 @@ export class RecervaCitasComponent implements OnInit {
   medicosFiltrados: Medico[];
   medicoSelect: string;
   horarios:Horario[];
-  citaGenerada:Cita;
   fechaCita:Date;
+
+
   constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private horarioService:HorarioService,private router: Router) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
@@ -52,23 +53,31 @@ export class RecervaCitasComponent implements OnInit {
     })
 
   }
-  generarCita(){
+  async generarCita(){
     //ya tenemos el idPaciente
     //tenemos codigo del doctor
-    //fecha
-    let cita:Cita;
-    this.medicoService.getMedicoById(this.medicoSelect).subscribe(data => {
-      cita.medico_id = data;
+    let citaMedica: cita = {
+      estado: '',
+      idCita: '',
+      fecha: new Date(),
+      medico_id: null,
+      paciente_id: null
+    };
+    await this.medicoService.getMedicoById(this.medicoSelect).subscribe(data => {
+      citaMedica.medico_id = data;
     });
-    this.pacienteService.getPacienteById("tu dni pavaso").subscribe(data => {
-      cita.paciente_id = data;
+    await this.pacienteService.getPacienteById("73524246").subscribe(data => {
+      citaMedica.paciente_id = data;
     });
-    cita.fecha = this.fechaCita;
-    this.citaService.crearCita(cita).subscribe(data => {
+    console.log(this.fechaCita);
+    //cita.fecha = this.fechaCita;
+    /*this.citaService.crearCita(cita).subscribe(data => {
+      console.log(data);
+      console.log(cita);
       if(data != null){
         //dialog = true;
         this.router.navigate(['/historial-citas']);
       }
-    });
+    });*/
   }
 }

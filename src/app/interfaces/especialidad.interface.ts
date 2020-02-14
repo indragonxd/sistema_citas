@@ -3,5 +3,5 @@ interface Especialidad {
   nombre:string;
   numConsultorio:number;
   descripcion:string;
-  imageUrl:string;
+  imageURL:string;
 }

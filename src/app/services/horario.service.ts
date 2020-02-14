@@ -9,6 +9,6 @@ export class HorarioService {
   constructor(private http: HttpClient) { }
 
   getHorariosByIdMedico(medicoId){
-    return this.http.get<Horario[]>('aqui ponga + medicoId');
+    return this.http.get<Horario[]>('http://localhost:8080/clinica/horarios/medico/' + medicoId);
   }
 }

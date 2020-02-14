@@ -2,3 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.input-group>.input-group-prepend>.input-group-text {
+    WIDTH: 200PX;
+}

@@ -10,6 +10,6 @@ export class PacienteService {
 
   }
   getPacienteById(idPaciente){
-    return this.http.get<Paciente>('http://localhost:8080/clinica/medicos/' + idPaciente);
+    return this.http.get<Paciente>('http://localhost:8080/clinica/pacientes/' + idPaciente);
   }
 }
