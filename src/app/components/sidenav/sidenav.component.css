@@ -4,11 +4,27 @@ mat-sidenav {
     padding:15px;
 }
 .mat-drawer { 
-    background-color: #3F51B5;
+    background-color: whitesmoke;
     color:#fff
 }
 .main-content {
     padding:20px;
+    background-image: url(../images/fondo-clinica.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    opacity: 0.4;
+    z-index: 1;
+}
+.second-content{
+    padding:20px;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    z-index: 2;
+    top: 90px;
 }
 .toolbar-spacer {
     flex: 1 1 auto;

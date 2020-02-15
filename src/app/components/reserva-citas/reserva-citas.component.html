@@ -11,7 +11,7 @@
         <div class="form-group col">
           <label for="inputEmail24">Medico</label>
           <select class="custom-select" (change)="llenarTabla($event)">
-            <option *ngFor='let medico of medicosFiltrados' [value]='medico.idMedico'>{{medico.nombres}}</option>
+            <option *ngFor='let medico of medicosFiltrados' [value]='medico.idMedico'>Dr. {{medico.nombres}} {{medico.apellidoPaterno}} {{medico.apellidoMaterno}}</option>
           </select>
         </div>
         <div class="form-group col">
