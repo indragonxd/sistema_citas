@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 import { HorarioService } from 'src/app/services/horario.service';
 
 @Component({
-  selector: 'app-recerva-citas',
-  templateUrl: './recerva-citas.component.html',
-  styleUrls: ['./recerva-citas.component.css']
+  selector: 'app-reserva-citas',
+  templateUrl: './reserva-citas.component.html',
+  styleUrls: ['./reserva-citas.component.css']
 })
-export class RecervaCitasComponent implements OnInit {
+export class ReservaCitasComponent implements OnInit {
   especialidades: Especialidad[];
   medicos: Medico[];
   especialidadSelect:string;

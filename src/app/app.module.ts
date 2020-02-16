@@ -8,7 +8,7 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
 
 import { AppRoutingModule } from './app-routing.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { RecervaCitasComponent } from './components/recerva-citas/recerva-citas.component';
+import { ReservaCitasComponent } from './components/reserva-citas/reserva-citas.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
@@ -17,7 +17,7 @@ import { EspecialidadesComponent } from './components/especialidades/especialida
   declarations: [
     AppComponent,
     SidenavComponent,
-    RecervaCitasComponent,
+    ReservaCitasComponent,
     PerfilComponent,
     HistorialCitasComponent,
     EspecialidadesComponent

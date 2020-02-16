@@ -1,0 +1,13 @@
+.card{
+    height: 565px;
+}
+.card-text{
+    height: 170px;
+}
+button{
+    position: relative;
+    left: 245px;
+}
+p{
+    text-align: justify;
+}
