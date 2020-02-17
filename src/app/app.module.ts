@@ -12,6 +12,7 @@ import { ReservaCitasComponent } from './components/reserva-citas/reserva-citas.
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
+import { RegistrarPagoComponent } from './components/registrar-pago/registrar-pago.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EspecialidadesComponent } from './components/especialidades/especialida
     ReservaCitasComponent,
     PerfilComponent,
     HistorialCitasComponent,
-    EspecialidadesComponent
+    EspecialidadesComponent,
+    RegistrarPagoComponent
   ],
   imports: [
     BrowserModule,
