@@ -6,17 +6,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CitaService {
   citas: Cita[];
+  cita: Cita;
+  
   constructor(private http: HttpClient) { 
 
   }
   getCitas(dni:string){
     //mediante un llmado httpcliente
     //ahora tienes que filtrar la cita por id de paciente
-    return this.http.get<Cita[]>('http://localhost:8080/clinica/citas/paciente/'+dni);
+    return this.http.get<Cita[]>('http://localhost:8080/clinica/citas/paciente/' + dni);
     
   }
   crearCita(cita:Cita){
-    //cambia la ruta
-    return this.http.post('http://localhost:8080/clinica/citas/',cita);
+    console.log('Generando la cita...');
+    console.log(cita.paciente_id.dni + '_' +cita.medico_id.idMedico + '_' + cita.idCita + '_' + cita.fecha);
+    return this.http.post('http://localhost:8080/clinica/citas',cita);
   }
 }
