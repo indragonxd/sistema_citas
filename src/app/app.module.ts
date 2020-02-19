@@ -12,6 +12,8 @@ import { RecervaCitasComponent } from './components/recerva-citas/recerva-citas.
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
+import { TipoPagoComponent } from './components/recerva-citas/tipo-pago/tipo-pago.component';
+import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EspecialidadesComponent } from './components/especialidades/especialida
     RecervaCitasComponent,
     PerfilComponent,
     HistorialCitasComponent,
-    EspecialidadesComponent
+    EspecialidadesComponent,
+    TipoPagoComponent,
+    EspecialidadVerMasComponent
   ],
   imports: [
     BrowserModule,

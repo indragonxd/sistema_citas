@@ -20,6 +20,7 @@ export class RecervaCitasComponent implements OnInit {
   horarios:Horario[];
   citaGenerada:Cita;
   fechaCita:Date;
+  cita:Cita;
   constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private horarioService:HorarioService,private router: Router) { 
     //this.especialidades = ['oto','trauma','faring'];
     //this.medicos = ['otosherwin','otomarqquez','otovale','traumabrian','traumaorellana','fajen','faron','faree'];
@@ -56,15 +57,14 @@ export class RecervaCitasComponent implements OnInit {
     //ya tenemos el idPaciente
     //tenemos codigo del doctor
     //fecha
-    let cita:Cita;
     this.medicoService.getMedicoById(this.medicoSelect).subscribe(data => {
-      cita.medico_id = data;
+      this.cita.medico_id = data;
     });
     this.pacienteService.getPacienteById("tu dni pavaso").subscribe(data => {
-      cita.paciente_id = data;
+      this.cita.paciente_id = data;
     });
-    cita.fecha = this.fechaCita;
-    this.citaService.crearCita(cita).subscribe(data => {
+    this.cita.fecha = this.fechaCita;
+    this.citaService.crearCita(this.cita).subscribe(data => {
       if(data != null){
         //dialog = true;
         this.router.navigate(['/historial-citas']);

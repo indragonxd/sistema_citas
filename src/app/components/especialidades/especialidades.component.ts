@@ -19,5 +19,8 @@ export class EspecialidadesComponent implements OnInit {
     })
     //console.log(this.especialidades);
   }
+  verDoctores(idEspecialidad){
+    
+  }
 
 }
