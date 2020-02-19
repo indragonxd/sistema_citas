@@ -64,13 +64,9 @@ export class ReservaCitasComponent implements OnInit {
     //Asignamos el paciente a la cita
     await this.pacienteService.getPacienteById("73524246").subscribe(data => {
       //Damos los valores a la cita
-      this.citaMedica.idCita = '1';
-      this.citaMedica.estado = 'Proceso';
       this.citaMedica.paciente_id = data;
       this.citaMedica.medico_id = this.medicoSelect;
       this.citaMedica.fecha = this.fechaCita;
-
-      console.log(this.citaMedica);
 
       //POST al backend
       this.citaService.crearCita(this.citaMedica).subscribe(data => {
