@@ -15,6 +15,6 @@ export class MedicoService {
     return this.http.get<Medico>('http://localhost:8080/clinica/medicos/' + idMedico);
   }
   getMedicosByIdEspecialidad(idEspecialidad){
-    return this.http.get<Medico[]>('http://localhost:8080/clinica/medicos/' + idEspecialidad);
+    return this.http.get<Medico[]>('http://localhost:8080/clinica/medicos/especialidad/' + idEspecialidad);
   }
 }

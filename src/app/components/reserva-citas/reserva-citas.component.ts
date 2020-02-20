@@ -12,6 +12,7 @@ import { cita } from 'src/app/interfaces/clases/cita.clase';
   templateUrl: './reserva-citas.component.html',
   styleUrls: ['./reserva-citas.component.css']
 })
+
 export class ReservaCitasComponent implements OnInit {
   especialidades: Especialidad[];
   medicos: Medico[];
@@ -24,7 +25,13 @@ export class ReservaCitasComponent implements OnInit {
   medicoSelect: Medico;
   fechaCita:Date; 
 
-  constructor(private especialidadService:EspecialidadService, private medicoService:MedicoService, private pacienteService:PacienteService, private citaService:CitaService,private horarioService:HorarioService,private router: Router) { 
+  constructor(
+    private especialidadService:EspecialidadService, 
+    private medicoService:MedicoService, 
+    private pacienteService:PacienteService, 
+    private citaService:CitaService,
+    private horarioService:HorarioService,
+    private router: Router ) { 
 
     this.especialidadService.getEspecialidades().
     subscribe(data=>{
@@ -36,9 +43,9 @@ export class ReservaCitasComponent implements OnInit {
     });
   }
     
-  ngOnInit() {}
+  ngOnInit() { }
 
-  actualizarSelect($event){
+  actualizarSelect(){
     this.medicosFiltrados = this.getMedicosFiltrados();
   }
 
@@ -46,7 +53,7 @@ export class ReservaCitasComponent implements OnInit {
     return this.medicos.filter(med => med.especialidad_id.idEspecialidad == this.especialidadSelect.idEspecialidad);
   }
 
-  llenarTabla($event){
+  llenarTabla(){
     this.horarioService.getHorariosByIdMedico(this.medicoSelect.idMedico).
     subscribe(data => {
       this.horarios = data;
@@ -58,14 +65,15 @@ export class ReservaCitasComponent implements OnInit {
   }
 
   async generarCita(){
-    this.citaMedica = new cita();
+    this.router.navigate(['/reserva-cita',this.medicoSelect.idMedico, '73524246', this.fechaCita]);
+    
+    /*this.citaMedica = new cita();
     await this.pacienteService.getPacienteById("73524246").subscribe(data => {
       this.citaMedica.paciente_id = data;
       this.citaMedica.medico_id = this.medicoSelect;
       this.citaMedica.fecha = this.fechaCita;
-      this.router.navigate(['/reserva-cita',this.citaMedica]);
+      this.router.navigate(['/reserva-cita','idMedico','idPaciente','fecha']);
       //POST al backend
-      /*
       this.citaService.crearCita(this.citaMedica).subscribe(data => {
         console.log(data);
         if(data != null){
@@ -73,7 +81,6 @@ export class ReservaCitasComponent implements OnInit {
           this.router.navigate(['/especialidades',]);
         }
       });
-      */
-    });  
+    });*/
   }
 }

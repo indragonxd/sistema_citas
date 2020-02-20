@@ -33,7 +33,7 @@ const routes: Routes = [
     component: EspecialidadVerMasComponent
   },
   {
-    path: 'reserva-cita/:cita',
+    path: 'reserva-cita/:idMedico/:idPaciente/:fecha',
     component: TipoPagoComponent
   },
 ];

@@ -7,21 +7,21 @@ import { Router } from '@angular/router';
   templateUrl: './especialidades.component.html',
   styleUrls: ['./especialidades.component.css']
 })
+
 export class EspecialidadesComponent implements OnInit {
   especialidades : Especialidad[];
   
-  constructor(private especialidadService:EspecialidadService, private router:Router) {
-  }
+  constructor(private especialidadService:EspecialidadService, private router:Router) { }
 
   ngOnInit() {
     this.especialidadService.getEspecialidades().
     subscribe(data=>{
       this.especialidades=data;
     })
-    //console.log(this.especialidades);
   }
+
   verDoctores(idEspecialidad){
-    this.router.navigate(['/especialidad',idEspecialidad]);
+    this.router.navigate(['/especialidades', idEspecialidad]);
   }
 
 }
