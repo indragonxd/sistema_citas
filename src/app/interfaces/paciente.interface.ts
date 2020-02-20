@@ -1,5 +1,5 @@
 interface Paciente {
-  dni:number;
+  dni:string;
   nombres:string;
   apellidoPaterno:string;
   apellidoMaterno:string;

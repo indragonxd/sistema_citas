@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RecervaCitasComponent } from './components/recerva-citas/recerva-citas.component'
+import { ReservaCitasComponent } from './components/reserva-citas/reserva-citas.component'
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component'
 import { PerfilComponent } from './components/perfil/perfil.component'
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component'
-
+import { RegistrarPagoComponent } from './components/registrar-pago/registrar-pago.component'
+import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
+import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 const routes: Routes = [
   {
-  path: 'recerva-cita',
-  component: RecervaCitasComponent
+  path: 'reserva-cita',
+  component: ReservaCitasComponent
   },
   {
     path: 'perfil',
@@ -21,7 +23,19 @@ const routes: Routes = [
   {
     path: 'especialidades',
     component: EspecialidadesComponent
-  }
+  },
+  {
+    path: 'registrar-pago',
+    component: RegistrarPagoComponent
+  },
+  {
+    path: 'especialidades/:idEspecialidad',
+    component: EspecialidadVerMasComponent
+  },
+  {
+    path: 'reserva-cita/:cita',
+    component: TipoPagoComponent
+  },
 ];
 
 @NgModule({

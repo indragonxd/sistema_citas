@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecialidadService } from 'src/app/services/especialidad.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-especialidades',
@@ -9,7 +10,7 @@ import { EspecialidadService } from 'src/app/services/especialidad.service';
 export class EspecialidadesComponent implements OnInit {
   especialidades : Especialidad[];
   
-  constructor(private especialidadService:EspecialidadService) {
+  constructor(private especialidadService:EspecialidadService, private router:Router) {
   }
 
   ngOnInit() {
@@ -20,7 +21,7 @@ export class EspecialidadesComponent implements OnInit {
     //console.log(this.especialidades);
   }
   verDoctores(idEspecialidad){
-    
+    this.router.navigate(['/especialidad',idEspecialidad]);
   }
 
 }

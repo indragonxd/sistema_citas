@@ -1,5 +1,5 @@
 interface Medico {
-  idMedico:string;
+  idMedico:number;
   nombres:string;
   apellidoPaterno:string;
   apellidoMaterno:string;

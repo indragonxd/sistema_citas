@@ -4,4 +4,5 @@ interface Cita {
   paciente_id:Paciente;
   medico_id:Medico;
   fecha:Date;
+  tipoPago:string;
 }

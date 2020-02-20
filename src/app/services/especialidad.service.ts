@@ -52,4 +52,7 @@ export class EspecialidadService {
     return this.http.get<Especialidad[]>('http://localhost:8080/clinica/especialidades');
     //return this.especialidades;
   }
+  getEspecialidadById(idEspecialidad){
+    return this.http.get<Especialidad>('http://localhost:8080/clinica/especialidades/'+ idEspecialidad);
+  }
 }

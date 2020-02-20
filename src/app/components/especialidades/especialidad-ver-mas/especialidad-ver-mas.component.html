@@ -1,1 +1,13 @@
-<p>especialidad-ver-mas works!</p>
+
+<h2 class="text-center">{{especialidad.nombre}}</h2>
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4">
+    <div class="card" *ngFor='let medico of medicos'>
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{medico.nombres}} {{medico.apellidoPaterno}}</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
