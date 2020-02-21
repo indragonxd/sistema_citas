@@ -16,5 +16,8 @@ export class HistorialCitasComponent implements OnInit {
       this.citas=data;
     })
   }
+  /*estadoPago(estado): String{
+    return estado==true?'Pagado':'Pendiente';
+  }*/
 
 }

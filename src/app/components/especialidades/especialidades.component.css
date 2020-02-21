@@ -4,9 +4,8 @@
 .card-text{
     height: 170px;
 }
-button{
-    position: relative;
-    left: 245px;
+.button{
+    text-align: right;
 }
 p{
     text-align: justify;

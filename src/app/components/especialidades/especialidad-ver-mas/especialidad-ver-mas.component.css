@@ -1,0 +1,14 @@
+p{
+    padding: 50px;
+}
+.card{
+    text-align: center;
+    display: block;
+}
+img{
+    width: 75%;
+}
+.card-text{
+    padding: 0;
+    text-align: justify;
+}

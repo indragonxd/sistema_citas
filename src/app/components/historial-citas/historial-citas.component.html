@@ -7,18 +7,20 @@
       <th scope="col">Medico</th>
       <th scope="col">Especialidad</th>
       <th scope="col">Consultorio</th>
+      <th scope="col">Estado de Pago</th>
       <th scope="col">Estado</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let cita of citas'>
-      <th scope="row">{{cita.idCita}}</th>
+    <tr *ngFor='let cita of citas; let id=index'>
+      <th scope="row">{{id+1}}</th>
       <td>{{cita.fecha}}</td>
       <td>{{cita.medico_id.nombres}} {{cita.medico_id.apellidoPaterno}}</td>
       <td>{{cita.medico_id.especialidad_id.nombre}}</td>
       <td>{{cita.medico_id.especialidad_id.numConsultorio}}</td>
+      <td *ngIf="cita.estadoPago==true">PAGADO</td>
+      <td *ngIf="cita.estadoPago==false">PENDIENTE</td>
       <td>{{cita.estado}}</td>
     </tr>
-   
   </tbody>
 </table>

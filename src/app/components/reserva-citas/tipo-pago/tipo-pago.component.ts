@@ -37,13 +37,13 @@ export class TipoPagoComponent implements OnInit {
 
     if(tipo == 'presencial'){
       
-      await this.pacienteService.getPacienteById("73524246").subscribe(data => {
+      await this.pacienteService.getPacienteById(this.idPaciente).subscribe(data => {
         
         this.citaMedica.paciente_id = data;
 
         this.medicoService.getMedicoById(this.idMedico).subscribe(data => {
         this.citaMedica.medico_id = data;
-        this.citaMedica.tipoPago = 'presencial';
+        this.citaMedica.tipoPago = 'Presencial';
         this.citaMedica.fecha = this.fechaCita;
         
         //POST al backend    
@@ -60,4 +60,9 @@ export class TipoPagoComponent implements OnInit {
       })
     }
   }
+
+  pagoOnline(){
+    this.router.navigate(['/pago-online'])
+  }
+
 }

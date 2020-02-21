@@ -4,7 +4,7 @@ import { ReservaCitasComponent } from './components/reserva-citas/reserva-citas.
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component'
 import { PerfilComponent } from './components/perfil/perfil.component'
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component'
-import { RegistrarPagoComponent } from './components/registrar-pago/registrar-pago.component'
+import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component'
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 const routes: Routes = [
@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'reserva-cita/:idMedico/:idPaciente/:fecha',
     component: TipoPagoComponent
+  },
+  {
+    path: 'pago-online',
+    component: RegistrarPagoComponent
   },
 ];
 

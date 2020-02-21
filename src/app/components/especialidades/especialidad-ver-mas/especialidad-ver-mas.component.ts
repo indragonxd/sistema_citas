@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MedicoService } from 'src/app/services/medico.service';
 import { EspecialidadService } from 'src/app/services/especialidad.service';
 
@@ -14,22 +14,26 @@ export class EspecialidadVerMasComponent implements OnInit {
   medicos : Medico[];
   especialidad : Especialidad;
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
+    private router: Router,
     private medicoService:MedicoService ,
-    private especialidadService:EspecialidadService ) { }
+    private especialidadService:EspecialidadService) { }
 
   ngOnInit() {
-    this.idEspecialidad = this.route.snapshot.paramMap.get('idEspecialidad');
+    this.idEspecialidad = this.route.snapshot.params.idEspecialidad;
     
-    this.medicoService.getMedicosByIdEspecialidad(this.idEspecialidad).
-    subscribe(data=>{
-      this.medicos=data;
-    })
-
     this.especialidadService.getEspecialidadById(this.idEspecialidad).
     subscribe(data=>{
       this.especialidad=data;
     })
 
+    this.medicoService.getMedicosByIdEspecialidad(this.idEspecialidad).
+    subscribe(data=>{
+      this.medicos=data;
+    })
+
+  }
+  regresar(){
+    this.router.navigate(['/especialidades']);
   }
 }

@@ -5,7 +5,9 @@
       <div class="card-body">
         <h5 class="card-title">{{especialidad.nombre}}</h5>
         <p class="card-text">{{especialidad.descripcion}}.</p>
-        <button class="btn btn-primary" (click)="verDoctores(especialidad.idEspecialidad)">Ver mas</button>
+        <div class="button">
+          <button class="btn btn-primary" (click)="verDoctores(especialidad.idEspecialidad)">Ver especialidad</button>
+        </div>    
       </div>
     </div>
   </div>

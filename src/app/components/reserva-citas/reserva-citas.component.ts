@@ -28,8 +28,6 @@ export class ReservaCitasComponent implements OnInit {
   constructor(
     private especialidadService:EspecialidadService, 
     private medicoService:MedicoService, 
-    private pacienteService:PacienteService, 
-    private citaService:CitaService,
     private horarioService:HorarioService,
     private router: Router ) { 
 
@@ -66,21 +64,5 @@ export class ReservaCitasComponent implements OnInit {
 
   async generarCita(){
     this.router.navigate(['/reserva-cita',this.medicoSelect.idMedico, '73524246', this.fechaCita]);
-    
-    /*this.citaMedica = new cita();
-    await this.pacienteService.getPacienteById("73524246").subscribe(data => {
-      this.citaMedica.paciente_id = data;
-      this.citaMedica.medico_id = this.medicoSelect;
-      this.citaMedica.fecha = this.fechaCita;
-      this.router.navigate(['/reserva-cita','idMedico','idPaciente','fecha']);
-      //POST al backend
-      this.citaService.crearCita(this.citaMedica).subscribe(data => {
-        console.log(data);
-        if(data != null){
-          //dialog = true;
-          this.router.navigate(['/especialidades',]);
-        }
-      });
-    });*/
   }
 }

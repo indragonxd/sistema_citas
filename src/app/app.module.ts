@@ -14,7 +14,7 @@ import { HistorialCitasComponent } from './components/historial-citas/historial-
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
-import { RegistrarPagoComponent } from './components/registrar-pago/registrar-pago.component';
+import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
