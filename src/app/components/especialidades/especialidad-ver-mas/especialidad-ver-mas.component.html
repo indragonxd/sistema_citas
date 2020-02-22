@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="regresar()">Volver</button>
+<button class="btn btn-primary" (click)="volver()">Volver</button>
 <h2 class="text-center">{{especialidad.nombre}}</h2>
 <p>{{especialidad.descripcion}}</p>
 <div class="row row-cols-1 row-cols-md-3">
@@ -8,6 +8,9 @@
       <div class="card-body">
         <h5 class="card-title">{{medico.nombres}} {{medico.apellidoPaterno}}</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div class="button">
+          <button class="btn btn-primary" (click)="reservarCita()">Reservar Cita</button>
+        </div>
       </div>
     </div>
   </div>

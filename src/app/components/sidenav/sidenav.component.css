@@ -9,7 +9,7 @@ mat-sidenav {
 }
 .main-content {
     padding:20px;
-    background-image: url(../images/fondo-clinica.jpeg);
+    background-image: url(../../images/fondo-clinica.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -31,9 +31,4 @@ mat-sidenav {
 }
 .example-card {
   max-width: 400px;
-}
-
-.imgRedonda {
-  width:200px;
-  height:300px;
 }

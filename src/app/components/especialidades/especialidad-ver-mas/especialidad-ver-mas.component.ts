@@ -33,7 +33,10 @@ export class EspecialidadVerMasComponent implements OnInit {
     })
 
   }
-  regresar(){
+  volver(){
     this.router.navigate(['/especialidades']);
+  }
+  reservarCita(){
+    this.router.navigate(['/reserva-cita']);
   }
 }

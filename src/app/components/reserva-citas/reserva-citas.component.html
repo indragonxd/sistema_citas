@@ -28,6 +28,7 @@
             <th scope="col">Hora Inicio</th>
             <th scope="col">Hora Fin</th>
             <th scope="col">Consultorio</th>
+            <th scope="col">Precio</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,7 @@
             <td>{{horario.horaInicio}}</td>
             <td>{{horario.horaFin}}</td>
             <td>{{horario.medico_id.especialidad_id.numConsultorio}}</td>
+            <th>{{horario.medico_id.especialidad_id.precio}}</th>
           </tr>
         </tbody>
       </table>
