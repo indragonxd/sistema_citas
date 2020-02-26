@@ -17,6 +17,7 @@ import { EspecialidadesComponent } from './components/especialidades/especialida
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/reg
     EspecialidadesComponent,
     TipoPagoComponent,
     EspecialidadVerMasComponent,
-    RegistrarPagoComponent
+    RegistrarPagoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

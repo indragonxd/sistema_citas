@@ -7,10 +7,15 @@ import { EspecialidadesComponent } from './components/especialidades/especialida
 import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component'
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 const routes: Routes = [
   {
-  path: 'reserva-cita',
-  component: ReservaCitasComponent
+    path: 'reserva-cita',
+    component: ReservaCitasComponent
+  },
+  {
+    path: 'success',
+    component: SidenavComponent
   },
   {
     path: 'perfil',
