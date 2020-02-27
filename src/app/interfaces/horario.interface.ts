@@ -1,5 +1,5 @@
 interface Horario {
-  id_horario:number;
+  id_horario?:number;
   dia:string;
   horaInicio:string;
   horaFin:string;

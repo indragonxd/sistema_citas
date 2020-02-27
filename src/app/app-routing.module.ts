@@ -9,6 +9,7 @@ import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pag
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
 import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
+import { MedicoCombosComponent } from './components/carga-horario/carga-manual-horario/medico-combos/medico-combos.component';
 const routes: Routes = [
   {
     path: 'reserva-cita',
@@ -48,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: 'carga-manual-horario/:idMedico',
-    component: CargaManualHorarioComponent
+    component: MedicoCombosComponent
   },
 ];
 

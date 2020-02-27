@@ -1,50 +1,30 @@
 <div class="container">
-  <div class="row">
+  <div ><button class="btn btn-primary" (click)="agregarHorario()">Agregar</button> </div>
+  <div class="row" *ngFor="let horario of horarios">
     <div class="col-3">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Hora Inicio
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
+      <label >Hora Inicio</label>
+      <select  [(ngModel)]="horario.horaInicio" class="custom-select">
+        <option [ngValue]='hora' *ngFor='let hora of horas'> {{hora}} </option>
+      </select>
     </div>
     <div class="col-3">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Hora Fin
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
+      <label >Fin</label>
+      <select  [(ngModel)]="horario.horaFin" class="custom-select">
+        <option [ngValue]='hora' *ngFor='let hora of horas'> {{hora}} </option>
+      </select>
     </div>
     <div class="col-3">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Dia
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
+      <label >Dia</label>
+      <select [(ngModel)]="horario.dia"  class="custom-select">
+        <option [ngValue]='dia' *ngFor='let dia of dias'> {{dia}} </option>
+      </select>
     </div>
     <div class="col-3">
-      <div class="row">
-        <div class="col-1"><button class="btn btn-primary">+</button> </div>
-        <div class="col-1"><button class="btn btn-secondary">-</button> </div>
+      <div class="row mt-4">
+        <div class="col-2 offset-1"><button class="btn btn-secondary">-</button> </div>
       </div>
     </div>
 
   </div>
+  <div class="btn btn-primary">Guardar</div>
 </div>
