@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -20,8 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
 import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
 import { MedicoCombosComponent } from './components/carga-horario/carga-manual-horario/medico-combos/medico-combos.component';
-import { AppMaterialModule } from './app-material/app-material.module';
-
+import { NgxDropzoneModule } from 'ngx-dropzone';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,11 +48,9 @@ import { AppMaterialModule } from './app-material/app-material.module';
     MatIconModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    AppMaterialModule
+    NgxDropzoneModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
