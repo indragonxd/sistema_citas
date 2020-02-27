@@ -8,6 +8,7 @@ import { EspecialidadVerMasComponent } from './components/especialidades/especia
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
+import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
 const routes: Routes = [
   {
     path: 'reserva-cita',
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'carga-manual-horario',
     component: CargaManualHorarioComponent
+  },
+  {
+    path: 'carga-masiva-horario',
+    component: CargaMasivaHorarioComponent
   },
   {
     path: 'carga-manual-horario/:idMedico',

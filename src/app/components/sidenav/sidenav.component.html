@@ -16,8 +16,11 @@
         <i class="fas fa-briefcase-medical"
           style="font-size: 25px; color: black; padding-right: 15px"></i>Especialidades </a>
       <a *ngIf="usuario.perfil=='Administrador'" mat-list-item [routerLink]="'/carga-manual-horario'">
-        <i class="fas fa-briefcase-medical"
-          style="font-size: 25px; color: black; padding-right: 15px"></i>Carga Manual Horarios </a>
+        <i class="fas fa-briefcase-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Carga Manual
+        Horarios </a>
+      <a *ngIf="usuario.perfil=='Administrador'" mat-list-item [routerLink]="'/carga-masiva-horario'">
+        <i class="fas fa-briefcase-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Carga Masiva
+        Horarios </a>
 
     </mat-nav-list>
   </mat-sidenav>

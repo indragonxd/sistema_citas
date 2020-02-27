@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-medico-combos',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./medico-combos.component.css']
 })
 export class MedicoCombosComponent implements OnInit {
-
-  constructor() { }
+  idMedico:string;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.idMedico = this.route.snapshot.params.idMedico;
   }
 
 }
