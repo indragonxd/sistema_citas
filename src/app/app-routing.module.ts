@@ -8,13 +8,14 @@ import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/reg
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
 const routes: Routes = [
   {
     path: 'reserva-cita',
     component: ReservaCitasComponent
   },
   {
-    path: 'success',
+    path: 'success/:dni',
     component: SidenavComponent
   },
   {
@@ -44,6 +45,14 @@ const routes: Routes = [
   {
     path: 'pago-online',
     component: RegistrarPagoComponent
+  },
+  {
+    path: 'carga-manual-horario',
+    component: CargaManualHorarioComponent
+  },
+  {
+    path: 'carga-manual-horario/:idMedico',
+    component: CargaManualHorarioComponent
   },
 ];
 

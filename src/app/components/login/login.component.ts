@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
   logeo(){
     console.log(this.password);
     //this.authService.getLogin(this.dni,this.password);
-    if(usuario){
+    //if(usuario){
       console.log('entre');
-      this.router.navigate(['/success']);
-    } 
+      this.router.navigate(['/success',this.dni]);
+   // } 
   }
 
 }

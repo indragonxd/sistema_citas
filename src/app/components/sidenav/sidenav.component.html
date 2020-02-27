@@ -1,17 +1,24 @@
-
-<mat-sidenav-container fullscreen >
+<mat-sidenav-container fullscreen>
   <mat-sidenav mode="side" #sidenav opened position="start">
     <mat-nav-list>
-      <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg/1200px-UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg.png" alt="..." width="200px" height="300px">
-      <a mat-list-item [routerLink]="'/perfil'">
-        <i class="fas fa-clinic-medical" style="font-size: 25px; color: black; padding-right: 15px;" ></i>Perfil </a>
-      <a mat-list-item [routerLink]="'/reserva-cita'"> 
-        <i class="fas fa-notes-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Reservar Cita </a>
-      <a mat-list-item [routerLink]="'/historial-citas'">
-        <i class="fas fa-book-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Historial de Citas </a>
-      <a mat-list-item [routerLink]="'/especialidades'"> 
-        <i class="fas fa-briefcase-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Especialidades </a>
-  
+      <img mat-card-image
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg/1200px-UNMSM_escudo_XVI-XXI_transparente_siglas_nombre_vertical.svg.png"
+        alt="..." width="200px" height="300px">
+      <a *ngIf="usuario.perfil=='Paciente'" mat-list-item [routerLink]="'/perfil'">
+        <i class="fas fa-clinic-medical" style="font-size: 25px; color: black; padding-right: 15px;"></i>Perfil </a>
+      <a *ngIf="usuario.perfil=='Paciente'" mat-list-item [routerLink]="'/reserva-cita'">
+        <i class="fas fa-notes-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Reservar Cita
+      </a>
+      <a *ngIf="usuario.perfil=='Paciente'" mat-list-item [routerLink]="'/historial-citas'">
+        <i class="fas fa-book-medical" style="font-size: 25px; color: black; padding-right: 15px"></i>Historial de Citas
+      </a>
+      <a *ngIf="usuario.perfil=='Paciente'" mat-list-item [routerLink]="'/especialidades'">
+        <i class="fas fa-briefcase-medical"
+          style="font-size: 25px; color: black; padding-right: 15px"></i>Especialidades </a>
+      <a *ngIf="usuario.perfil=='Administrador'" mat-list-item [routerLink]="'/carga-manual-horario'">
+        <i class="fas fa-briefcase-medical"
+          style="font-size: 25px; color: black; padding-right: 15px"></i>Carga Manual Horarios </a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,17 +28,17 @@
       </button>
       Sistema de Reserva de Citas
       <span class="toolbar-spacer"></span>
-        Brian Orellana
+      Brian Orellana
       <i class="fas fa-user" style="font-size: 30px; color: black; padding: 0px 50px 0px 15px;"></i>
       Salir
       <i class="fas fa-sign-out-alt" style="font-size: 25px; color: black; padding-left: 20px;"></i>
     </mat-toolbar>
 
-    <div class="main-content"> 
+    <div class="main-content">
     </div>
     <div class="second-content">
       <router-outlet></router-outlet>
-    </div> 
-    
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

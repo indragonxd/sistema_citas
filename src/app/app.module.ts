@@ -18,6 +18,9 @@ import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pag
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
 import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component';
 import { LoginComponent } from './components/login/login.component';
+import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
+import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
+import { MedicoCombosComponent } from './components/carga-horario/carga-manual-horario/medico-combos/medico-combos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { LoginComponent } from './components/login/login.component';
     TipoPagoComponent,
     EspecialidadVerMasComponent,
     RegistrarPagoComponent,
-    LoginComponent
+    LoginComponent,
+    CargaManualHorarioComponent,
+    CargaMasivaHorarioComponent,
+    MedicoCombosComponent
   ],
   imports: [
     BrowserModule,
