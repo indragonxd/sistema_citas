@@ -9,20 +9,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   isError = false;
-  dni:string;
-  password:string;
-  usuario:Usuario;
-  constructor(private authService:AuthService, private router:Router) { }
+  dni: string;
+  password: string;
+  usuario: Usuario;
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  logeo(){
+  logeo() {
     console.log(this.password);
-    //this.authService.getLogin(this.dni,this.password);
-    //if(usuario){
-      console.log('entre');
-      this.router.navigate(['/success',this.dni]);
-   // } 
+    this.authService.getLogin(this.dni, this.password).subscribe(data => {
+      this.usuario = data;
+      console.log(data);
+      if (this.usuario) {
+        console.log('entre');
+        this.router.navigate(['/success',this.dni]);
+      } else
+        console.log("no hay usuarios");
+    })
   }
 
 }

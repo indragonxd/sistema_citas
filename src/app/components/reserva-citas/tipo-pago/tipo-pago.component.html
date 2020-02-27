@@ -32,7 +32,7 @@
 
           <div class="row">
             <div class="col-12">
-              <input type="text" class="form-control" placeholder="Número de Tarjeta" aria-label="Username"
+              <input type="text" id="numTarjeta" class="form-control" placeholder="Número de Tarjeta" aria-label="Username"
                 aria-describedby="basic-addon1">
             </div>
 
@@ -40,7 +40,7 @@
 
           <div class="row">
             <div class="col-6">
-              <input type="text" class="form-control" placeholder="MM/AA" aria-label="Username"
+              <input type="text" id="caducidad" class="form-control" placeholder="MM/AA" aria-label="Username"
                 aria-describedby="basic-addon1">
             </div>
             <div class="col-6">
@@ -71,6 +71,30 @@
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
           <button id="btnPagar" type="button" class="btn btn-primary">Pagar S/.25.00</button>
 
+          <script>
+
+            var contTarjeta = 0;
+            var x = document.getElementById("numTarjeta");
+            x.addEventListener("keypress", function () {
+                contTarjeta++
+                if (contTarjeta == 5 || contTarjeta == 9 || contTarjeta == 13) {
+                    console.log("escribiendo..", this.value);
+                    console.log(contTarjeta);
+                    this.value = this.value + '-';
+                }
+            })
+          
+            var contCaducidad = 0;
+            var x = document.getElementById("caducidad");
+            x.addEventListener("keypress", function () {
+                contCaducidad++
+                if (contCaducidad == 3) {
+                    console.log("escribiendo..", this.value);
+                    console.log(contCaducidad);
+                    this.value = this.value + '/';
+                }
+            })
+          </script>
         </div>
       </div>
     </div>
@@ -78,6 +102,7 @@
   </ng-template>
 
 </div>
+
 
 <!--
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"

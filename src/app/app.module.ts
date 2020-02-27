@@ -16,7 +16,6 @@ import { HistorialCitasComponent } from './components/historial-citas/historial-
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { TipoPagoComponent } from './components/reserva-citas/tipo-pago/tipo-pago.component';
 import { EspecialidadVerMasComponent } from './components/especialidades/especialidad-ver-mas/especialidad-ver-mas.component';
-import { RegistrarPagoComponent } from './components/reserva-citas/tipo-pago/registrar-pago/registrar-pago.component';
 import { LoginComponent } from './components/login/login.component';
 import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
 import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
@@ -32,7 +31,6 @@ import { MedicoCombosComponent } from './components/carga-horario/carga-manual-h
     EspecialidadesComponent,
     TipoPagoComponent,
     EspecialidadVerMasComponent,
-    RegistrarPagoComponent,
     LoginComponent,
     CargaManualHorarioComponent,
     CargaMasivaHorarioComponent,

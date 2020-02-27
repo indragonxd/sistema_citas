@@ -14,7 +14,9 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
     this.dni = this.route.snapshot.params.dni;
-    //this.usuario = authService
+    this.authService.getUser(this.dni).subscribe(data => {
+      this.usuario = data;
+    })
   }
 
 }

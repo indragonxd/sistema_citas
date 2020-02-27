@@ -8,8 +8,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getLogin(usuario:string, password:string){
-    return this.http.get<Usuario>('http://localhost:8080/clinica/');
+  getLogin(dni: string, password: string) {
+    return this.http.get<Usuario>('http://localhost:8080/clinica/login/' + dni + '/' + password);
+  }
+  getUser(dni:string){
+    return this.http.get<Usuario>('http://localhost:8080/clinica/login/' + dni);
   }
 
 }
