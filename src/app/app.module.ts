@@ -20,7 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CargaManualHorarioComponent } from './components/carga-horario/carga-manual-horario/carga-manual-horario.component';
 import { CargaMasivaHorarioComponent } from './components/carga-horario/carga-masiva-horario/carga-masiva-horario.component';
 import { MedicoCombosComponent } from './components/carga-horario/carga-manual-horario/medico-combos/medico-combos.component';
-
+import { NgxDropzoneModule } from 'ngx-dropzone';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,8 @@ import { MedicoCombosComponent } from './components/carga-horario/carga-manual-h
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]
