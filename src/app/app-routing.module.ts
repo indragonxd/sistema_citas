@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ReservaCitasComponent } from './components/reserva-citas/reserva-citas.component';
 import { HistorialCitasComponent } from './components/historial-citas/historial-citas.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
@@ -13,45 +12,62 @@ import { MedicoCombosComponent } from './components/carga-horario/carga-manual-h
 
 const routes: Routes = [
   {
-    path: 'reserva-cita',
-    component: ReservaCitasComponent
+    path: 'login',
+    loadChildren: () =>
+      import('./components/login/login.module').then(
+        m => m.LoginModule,
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   },
   {
     path: 'success/:dni',
-    component: SidenavComponent
+    component: SidenavComponent,
+    children: [
+      {
+        path: 'reserva-cita',
+        loadChildren: () =>
+          import('./components/reserva-citas/reserva-citas.module').then(
+            m => m.ReservaCitasModule
+          )
+      },
+      {
+        path: 'perfil',
+        component: PerfilComponent
+      },
+      {
+        path: 'historial-citas',
+        component: HistorialCitasComponent
+      },
+      {
+        path: 'especialidades',
+        component: EspecialidadesComponent
+      },
+      {
+        path: 'especialidades/:idEspecialidad',
+        component: EspecialidadVerMasComponent
+      },
+      {
+        path: 'reserva-cita/:idMedico/:idPaciente/:fecha',
+        component: TipoPagoComponent
+      },
+      {
+        path: 'carga-manual-horario',
+        component: CargaManualHorarioComponent
+      },
+      {
+        path: 'carga-masiva-horario',
+        component: CargaMasivaHorarioComponent
+      },
+      {
+        path: 'carga-manual-horario/:idMedico',
+        component: MedicoCombosComponent
+      },
+    ]
   },
-  {
-    path: 'perfil',
-    component: PerfilComponent
-  },
-  {
-    path: 'historial-citas',
-    component: HistorialCitasComponent
-  },
-  {
-    path: 'especialidades',
-    component: EspecialidadesComponent
-  },
-  {
-    path: 'especialidades/:idEspecialidad',
-    component: EspecialidadVerMasComponent
-  },
-  {
-    path: 'reserva-cita/:idMedico/:idPaciente/:fecha',
-    component: TipoPagoComponent
-  },
-  {
-    path: 'carga-manual-horario',
-    component: CargaManualHorarioComponent
-  },
-  {
-    path: 'carga-masiva-horario',
-    component: CargaMasivaHorarioComponent
-  },
-  {
-    path: 'carga-manual-horario/:idMedico',
-    component: MedicoCombosComponent
-  },
+
 ];
 
 @NgModule({
